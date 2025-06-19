@@ -1,0 +1,72 @@
+
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8">
+  <title>Video dengan Popup TikTok & Shopee</title>
+  <style>
+    body {
+      margin: 0;
+      background-color: #000;
+    }
+    iframe {
+      width: 100%;
+      height: 100vh;
+      border: none;
+    }
+    .popup {
+      display: none;
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100vw;
+      height: 100vh;
+      background-color: rgba(0, 0, 0, 0.85);
+      z-index: 9999;
+      color: white;
+      text-align: center;
+      padding-top: 20%;
+      box-sizing: border-box;
+      font-family: sans-serif;
+      cursor: pointer;
+    }
+    .popup h1, .popup p {
+      pointer-events: none;
+    }
+  </style>
+</head>
+<body>
+
+<iframe src="https://poopdown.com/d/rye9o709pm7j" allowfullscreen></iframe>
+
+<!-- TikTok Popup -->
+<div id="popup1" class="popup" onclick="window.open('https://vt.tokopedia.com/t/ZSkXqDoL1/', '_blank'); hidePopup('popup1', showPopup2);">
+  <h1>🔥 Promo Spesial dari TikTok Shop!</h1>
+  <p>Klik di mana saja untuk belanja!</p>
+</div>
+
+<!-- Shopee Popup -->
+<div id="popup2" class="popup" onclick="window.open('https://s.shopee.co.id/1BAborMPri?share_channel_code=2', '_blank'); hidePopup('popup2');">
+  <h1>🎉 Promo Spesial dari Shopee!</h1>
+  <p>Klik di mana saja untuk belanja!</p>
+</div>
+
+<script>
+  function hidePopup(id, callback) {
+    document.getElementById(id).style.display = 'none';
+    if (callback) setTimeout(callback, 300);
+  }
+
+  function showPopup2() {
+    document.getElementById('popup2').style.display = 'block';
+  }
+
+  window.onload = () => {
+    setTimeout(() => {
+      document.getElementById('popup1').style.display = 'block';
+    }, 3000);
+  };
+</script>
+
+</body>
+</html>
